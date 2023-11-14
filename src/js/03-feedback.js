@@ -20,7 +20,16 @@ function onFormInput(event) {
 
 function onFormSubmit(event) {
   event.preventDefault();
+
+  if (!form.elements.email.value || !form.elements.message.value) {
+    alert('Необхідно заповнити всі поля');
+    return;
+  }
+
+  console.log(formData);
+
   storageManage.remove(STORAGE_KEY);
+
   event.target.reset();
 }
 
