@@ -5,7 +5,7 @@
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- *//** Used as the `TypeError` message for "Functions" methods. */var n="Expected a function",o=0/0,i=/^\s+|\s+$/g,a=/^[-+]0x[0-9a-f]+$/i,f=/^0b[01]+$/i,u=/^0o[0-7]+$/i,l=parseInt,c="object"==typeof e&&e&&e.Object===Object&&e,s="object"==typeof self&&self&&self.Object===Object&&self,d=c||s||Function("return this")(),v=Object.prototype.toString,m=Math.max,p=Math.min,g=function(){return d.Date.now()};/**
+ *//** Used as the `TypeError` message for "Functions" methods. */var n="Expected a function",o=0/0,i=/^\s+|\s+$/g,a=/^[-+]0x[0-9a-f]+$/i,l=/^0b[01]+$/i,u=/^0o[0-7]+$/i,f=parseInt,c="object"==typeof e&&e&&e.Object===Object&&e,s="object"==typeof self&&self&&self.Object===Object&&self,d=c||s||Function("return this")(),v=Object.prototype.toString,m=Math.max,p=Math.min,g=function(){return d.Date.now()};/**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
  * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -51,7 +51,7 @@
  *
  * _.toNumber('3.2');
  * // => 3.2
- */function b(e){if("number"==typeof e)return e;if("symbol"==typeof(t=e)||t&&"object"==typeof t&&"[object Symbol]"==v.call(t))return o;if(y(e)){var t,r="function"==typeof e.valueOf?e.valueOf():e;e=y(r)?r+"":r}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(i,"");var n=f.test(e);return n||u.test(e)?l(e.slice(2),n?2:8):a.test(e)?o:+e}t.exports=/**
+ */function b(e){if("number"==typeof e)return e;if("symbol"==typeof(t=e)||t&&"object"==typeof t&&"[object Symbol]"==v.call(t))return o;if(y(e)){var t,r="function"==typeof e.valueOf?e.valueOf():e;e=y(r)?r+"":r}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(i,"");var n=l.test(e);return n||u.test(e)?f(e.slice(2),n?2:8):a.test(e)?o:+e}t.exports=/**
  * Creates a throttled function that only invokes `func` at most once per
  * every `wait` milliseconds. The throttled function comes with a `cancel`
  * method to cancel delayed `func` invocations and a `flush` method to
@@ -147,15 +147,15 @@
  *
  * // Cancel the trailing debounced invocation.
  * jQuery(window).on('popstate', debounced.cancel);
- */function(e,t,r){var o,i,a,f,u,l,c=0,s=!1,d=!1,v=!0;if("function"!=typeof e)throw TypeError(n);function h(t){var r=o,n=i;return o=i=void 0,c=t,f=e.apply(n,r)}function j(e){var r=e-l,n=e-c;// Either this is the first call, activity has stopped and we're at the
+ */function(e,t,r){var o,i,a,l,u,f,c=0,s=!1,d=!1,v=!0;if("function"!=typeof e)throw TypeError(n);function h(t){var r=o,n=i;return o=i=void 0,c=t,l=e.apply(n,r)}function j(e){var r=e-f,n=e-c;// Either this is the first call, activity has stopped and we're at the
 // trailing edge, the system time has gone backwards and we're treating
 // it as the trailing edge, or we've hit the `maxWait` limit.
-return void 0===l||r>=t||r<0||d&&n>=a}function x(){var e,r,n,o=g();if(j(o))return O(o);// Restart the timer.
-u=setTimeout(x,(e=o-l,r=o-c,n=t-e,d?p(n,a-r):n))}function O(e){return(// Only invoke if we have `lastArgs` which means `func` has been
+return void 0===f||r>=t||r<0||d&&n>=a}function x(){var e,r,n,o=g();if(j(o))return O(o);// Restart the timer.
+u=setTimeout(x,(e=o-f,r=o-c,n=t-e,d?p(n,a-r):n))}function O(e){return(// Only invoke if we have `lastArgs` which means `func` has been
 // debounced at least once.
-(u=void 0,v&&o)?h(e):(o=i=void 0,f))}function T(){var e,r=g(),n=j(r);if(o=arguments,i=this,l=r,n){if(void 0===u)return(// Reset any `maxWait` timer.
-c=e=l,// Start the timer for the trailing edge.
-u=setTimeout(x,t),s?h(e):f);if(d)return(// Handle invocations in a tight loop.
-u=setTimeout(x,t),h(l))}return void 0===u&&(u=setTimeout(x,t)),f}return t=b(t)||0,y(r)&&(s=!!r.leading,a=(d="maxWait"in r)?m(b(r.maxWait)||0,t):a,v="trailing"in r?!!r.trailing:v),T.cancel=function(){void 0!==u&&clearTimeout(u),c=0,o=l=i=u=void 0},T.flush=function(){return void 0===u?f:O(g())},T}(e,t,{leading:o,maxWait:t,trailing:i})}}),o("jzQFI",function(e,t){Object.defineProperty(e.exports,"default",{get:function(){return r},set:void 0,enumerable:!0,configurable:!0});var r={save:(e,t)=>{try{let r=JSON.stringify(t);localStorage.setItem(e,r)}catch(e){console.error("Set state error: ",e.message)}},load:e=>{try{let t=localStorage.getItem(e);return null===t?void 0:JSON.parse(t)}catch(e){console.error("Get state error: ",e.message)}},remove:e=>{try{localStorage.removeItem(e)}catch(e){console.error("Remove state error",e.massage)}}}});var i=n("dCfNN"),a=n("jzQFI");let f="feedback-form-state",u={},l=document.querySelector(".feedback-form");l.addEventListener("input",(i&&i.__esModule?i.default:i)(function(e){u[e.target.name]=e.target.value,(0,a.default).save(f,u)},500)),l.addEventListener("submit",function(e){e.preventDefault(),(0,a.default).remove(f),e.target.reset()}),function(){let e=(0,a.default).load(f);e&&(l.elements.email.value=e.email,l.elements.message.value=e.message)}()}();//# sourceMappingURL=03-feedback.c59ab68f.js.map
+(u=void 0,v&&o)?h(e):(o=i=void 0,l))}function T(){var e,r=g(),n=j(r);if(o=arguments,i=this,f=r,n){if(void 0===u)return(// Reset any `maxWait` timer.
+c=e=f,// Start the timer for the trailing edge.
+u=setTimeout(x,t),s?h(e):l);if(d)return(// Handle invocations in a tight loop.
+u=setTimeout(x,t),h(f))}return void 0===u&&(u=setTimeout(x,t)),l}return t=b(t)||0,y(r)&&(s=!!r.leading,a=(d="maxWait"in r)?m(b(r.maxWait)||0,t):a,v="trailing"in r?!!r.trailing:v),T.cancel=function(){void 0!==u&&clearTimeout(u),c=0,o=f=i=u=void 0},T.flush=function(){return void 0===u?l:O(g())},T}(e,t,{leading:o,maxWait:t,trailing:i})}}),o("jzQFI",function(e,t){Object.defineProperty(e.exports,"default",{get:function(){return r},set:void 0,enumerable:!0,configurable:!0});var r={save:(e,t)=>{try{let r=JSON.stringify(t);localStorage.setItem(e,r)}catch(e){console.error("Set state error: ",e.message)}},load:e=>{try{let t=localStorage.getItem(e);return null===t?void 0:JSON.parse(t)}catch(e){console.error("Get state error: ",e.message)}},remove:e=>{try{localStorage.removeItem(e)}catch(e){console.error("Remove state error",e.massage)}}}});var i=n("dCfNN"),a=n("jzQFI");let l="feedback-form-state",u={},f=document.querySelector(".feedback-form");f.addEventListener("input",(i&&i.__esModule?i.default:i)(function(e){u[e.target.name]=e.target.value,(0,a.default).save(l,u)},500)),f.addEventListener("submit",function(e){if(e.preventDefault(),!f.elements.email.value||!f.elements.message.value){alert("Необхідно заповнити всі поля");return}console.log(u),(0,a.default).remove(l),e.target.reset()}),function(){let e=(0,a.default).load(l);e&&(f.elements.email.value=e.email,f.elements.message.value=e.message)}()}();//# sourceMappingURL=03-feedback.b7d6b2d1.js.map
 
-//# sourceMappingURL=03-feedback.c59ab68f.js.map
+//# sourceMappingURL=03-feedback.b7d6b2d1.js.map
